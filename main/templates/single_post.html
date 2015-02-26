@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{%  block content %}
+    <section class="container">
+        <div class="jumbotron">
+            <font size="6"><b>{{ post.header }}</b></font>
+            <i><h5>{{ post.when }}</h5></i>
+            {% if user.is_authenticated %}
+                <div style="text-align: right;">
+                    <a href="/posts/{{ post.id}}/edit/"><i><h5>Edit post</h5></i></a>
+                </div>
+            {% endif %}
+            <p>{{ post.text|safe }}</p>
+            <hr/>
+            
+            {% if comments %}
+            <h4>Comments</h4>
+            <ul>
+            {% for comment in comments %}
+                <li style="list-style: disc;">
+                    <h7><i>{{ comment.when }}</i></h7>
+                    <p>{{ comment.text|safe }}</p>
+                </li>
+            {% endfor %}
+            </ul>
+            {% endif %}
+            
+
+            <form role="form" action="/posts/{{ post.id}}/add_comment/" method="post">
+                {% csrf_token %}
+                <ul>
+                <li style="list-style: none"><input type="text" class="form-control" name="header" value="{{ comments.header }}"/>
+                <textarea cols="30" rows="10" class="form-control"name="text" id=""></textarea></li>
+                <li style="list-style: none"><button type="submit" class="btn btn-default">Add comment</button></li>
+                </ul>
+            </form>
+        </div>
+    </section>
+{%  endblock content %}
