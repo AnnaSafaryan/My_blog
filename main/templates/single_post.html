@@ -17,8 +17,9 @@
             <ul>
             {% for comment in comments %}
                 <li style="list-style: disc;">
+                    <h4><p>{{ comment.header }}</p></h4>
                     <h7><i>{{ comment.when }}</i></h7>
-                    <p>{{ comment.text|safe }}</p>
+                    <p>{{ comment.text }}</p>
                 </li>
             {% endfor %}
             </ul>
