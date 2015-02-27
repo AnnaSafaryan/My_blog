@@ -3,14 +3,16 @@
     <section class="container">
         <div class="jumbotron">
             <h1><b>Posts ({{ posts.count }})</b></h1>
-            <div style="text-align: right;">
+            {% if user.is_authenticated %}
+                <div style="text-align: right;">
                     <a href="/addpost"><h5><i>Add post</i></h5></a>
                 </div>
+            {% endif %}
         {% for post in posts %}
         <hr/>
             <div class="row">
                 <div class="md-col-2 text-right">
-                    <a href="/posts/{{ post.id }}/"><i>Comments ({{ post.comment_set.count }})</i></a>
+                    <i>Comments ({{ post.comment_set.count }})</i>
                 </div>
             </div>
             <div class="row">
