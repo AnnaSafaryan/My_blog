@@ -12,14 +12,7 @@ Course was read in [Liceum #40, Nizhniy Novgorod, Russia](http://www.lic40nn.edu
 
 
 ##How to run this blog on local machine?
-* Install [Python 2.x](https://www.python.org/downloads/) (if not already done) 
-* Install [PIP (Python Package Index)](https://pip.pypa.io/en/latest/installing.html) Note: 
-PIP is already included in Python 2.7.9+
-* Install [GIT](http://git-scm.com/downloads)
-* Clone this repository
-    git clone https://github.com/AlexDobrushskiy/simple_blog.git
 * Go to repository directory 
-    cd simple_blog
 * Install dev-dependencies:
     pip install -r requirements-dev.txt
 * Run application
