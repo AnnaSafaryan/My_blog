@@ -74,7 +74,8 @@ class AddComment(View):
         post = Post.objects.get(id=id)
         header = request.POST['header']
         text = request.POST['text']
-        Comment.objects.create(post=post, header=header, text=text)
+        user = request.user
+        Comment.objects.create(post=post, header=header, text=text, who=user)
         return HttpResponseRedirect('/posts/{}/'.format(id))
 
 

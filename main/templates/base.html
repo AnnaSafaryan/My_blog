@@ -33,18 +33,25 @@
                 </div>
 
                 <div id="navbar" class="collapse navbar-collapse" align="center">
-                    <ul class="nav navbar-nav">
-                        <li><a href="/">Home</a></li>
-                        <li><a href="/admin">Admin</a><li>
-                        <li><a href="/about">About</a></li>
-                        <li><a href="/contacts">Contacts</a></li>
+                    <div class="row">
+                        <div class="col-lg-11">
+                            <ul class="nav navbar-nav">
+                                <li><a href="/">Home</a></li>
+                                <li><a href="/admin">Admin</a><li>
+                                <li><a href="/about">About</a></li>
+                                <li><a href="/contacts">Contacts</a></li>
+                            </ul>
+                        </div>
                        
-                    
-                {% if user.is_authenticated %}
-                <li><a href="/logout">Logout</a></li>
-                
-                {% endif %}</ul></div>
-
+                        <div class="col-lg-1">
+                            <ul class="nav navbar-nav" style='float:right:'>    
+                            {% if user.is_authenticated %}
+                            <li><a href="/logout">Logout</a></li>
+                            {% endif %}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 
